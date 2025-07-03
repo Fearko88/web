@@ -1,0 +1,68 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Gestión AF-Salta</title>
+    <script type="importmap">
+      {
+        "imports": {
+          "xlsx": "https://cdn.jsdelivr.net/npm/xlsx@0.18.5/xlsx.mjs"
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Sistema de Gestión AF-Salta</h1>
+        <div id="user-info" class="hidden">
+            <span id="logged-in-user"></span>
+            <button id="logout-button">Cerrar Sesión</button>
+        </div>
+    </header>
+    <main>
+        <!-- Login Screen -->
+        <div id="login-screen" class="screen active">
+            <div class="login-container">
+                <h2>Iniciar Sesión</h2>
+                <p class="welcome-message">
+                    Bienvenidos a mi sistema de control de Asistencia y Herramientas para el personal de AF de las diferentes bases que esta ciudad tiene. Esta app pretende facilitar el control mediante planillas de Excel para su agilidad. Ante cualquier duda consultar al +543873095919 Franco Yulan creador de esta nueva APP Gestión.
+                </p>
+                <form id="login-form">
+                    <div class="form-group">
+                        <label for="username">Usuario:</label>
+                        <input type="text" id="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Contraseña:</label>
+                        <input type="password" id="password">
+                    </div>
+                    <button type="submit" class="btn">Ingresar</button>
+                    <p id="login-error" class="error-message"></p>
+                </form>
+            </div>
+        </div>
+
+        <!-- Main Menu Screen -->
+        <div id="main-menu-screen" class="screen hidden">
+            <h2>Menú Principal</h2>
+            <div id="main-menu-buttons" class="button-container">
+                <!-- Buttons will be dynamically added here -->
+            </div>
+        </div>
+        
+        <div class="screen-content hidden">
+            <div class="top-bar">
+                <button class="nav-button" id="back-button"><i class="fas fa-arrow-left"></i> Volver Atrás</button>
+                <button class="nav-button" id="main-menu-button"><i class="fas fa-home"></i> Menú Principal</button>
+            </div>
+            <div id="screen-content-body">
+                <!-- Dynamic content will be loaded here -->
+            </div>
+        </div>
+
+    </main>
+    <script type="module" src="script.js"></script>
+</body>
+</html>
